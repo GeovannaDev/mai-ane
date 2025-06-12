@@ -10,7 +10,7 @@ function tela1() {
       <img src="assets/images/mai4.jpg" class="flutuante delay3" />
     </div>
 
-    <img src="maigegeo.jpg" alt="Mai linda" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);" />
+    <img src="assets/images/maigegeo.jpg" alt="Mai linda" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);" />
     <p class="frase-fofa">Seu sorriso tem mais luz que o céu inteiro estrelado.</p>
     <h1>Feliz Dia dos Namorados, Mai! 💌 </h1>
     <p>Tenho um desafio do coração pra você...</p>
