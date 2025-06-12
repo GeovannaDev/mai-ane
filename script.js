@@ -4,10 +4,10 @@ const app = document.getElementById('app');
 function tela1() {
   app.innerHTML = `
     <div class="fotos-flutuantes">
-      <img src="assets/images/mai1.jpg" class="flutuante" />
-      <img src="assets/images/mai2.jpg" class="flutuante delay1" />
-      <img src="assets/images/mai3.jpg" class="flutuante delay2" />
-      <img src="assets/images/mai4.jpg" class="flutuante delay3" />
+      <img src="images/mai1.jpg" class="flutuante" />
+      <img src="images/mai2.jpg" class="flutuante delay1" />
+      <img src="images/mai3.jpg" class="flutuante delay2" />
+      <img src="images/mai4.jpg" class="flutuante delay3" />
     </div>
 
     <img src="maigegeo.jpg" alt="Mai linda" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);" />
