@@ -58,25 +58,28 @@ function tela4() {
     </p>
     <button onclick="telaFinal()">Clica aqui se me ama</button>
   `;
-  iniciarContagem('2025-07-27T00:00:00');
+  iniciarContagem('2025-07-25T00:00:00');
 }
 
-// Função da contagem regressiva
-function iniciarContagem(target) {
+// Função da contagem regressiva corrigida
+function iniciarContagem() {
   const el = document.getElementById('countdown');
-  const targetMs = new Date(target).getTime();
+  const targetDate = new Date(2025, 6, 25, 0, 0, 0); // Julho = 6
 
   function update() {
-    const diff = targetMs - Date.now();
+    const now = new Date();
+    const diff = targetDate.getTime() - now.getTime();
+
     if (diff <= 0) {
       el.textContent = 'Hoje é o dia! Te vejo logo, meu amor. 💞';
       clearInterval(interval);
       return;
     }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
 
     el.innerHTML = `
       <div class="count-box">
@@ -98,10 +101,9 @@ function iniciarContagem(target) {
     `;
   }
 
-  const interval = setInterval(update, 1000); // agora definido antes de ser usado
-  update(); // chamada inicial após definição de interval
+  update();
+  const interval = setInterval(update, 1000);
 }
-
 
 // Tela final com mensagem e playlist
 function telaFinal() {
