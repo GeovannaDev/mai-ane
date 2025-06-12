@@ -1,20 +1,10 @@
 const app = document.getElementById('app');
 
-// Exemplo: tocar depois que a pessoa clicar em algo
-document.getElementById('play-audio').addEventListener('click', () => {
-  const audio = document.getElementById('bg-audio');
-  audio.play()
-    .then(() => console.log('Áudio tocando!'))
-    .catch(err => console.log('Erro ao tocar áudio:', err));
-});
-
-});
-
 // Tela inicial
 function tela1() {
   app.innerHTML = `
     <div class="fotos-flutuantes">
-      <img src="images/mai1.jpg" class="flutuante" />
+      <img src="assets/images/mai1.jpg" class="flutuante" />
       <img src="images/mai2.jpg" class="flutuante delay1" />
       <img src="images/mai3.jpg" class="flutuante delay2" />
       <img src="images/mai4.jpg" class="flutuante delay3" />
