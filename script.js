@@ -70,38 +70,38 @@ function iniciarContagem(target) {
     const diff = targetMs - Date.now();
     if (diff <= 0) {
       el.textContent = 'Hoje é o dia! Te vejo logo, meu amor. 💞';
-      return clearInterval(interval);
+      clearInterval(interval);
+      return;
     }
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000) / 60000);
     const s = Math.floor((diff % 60000) / 1000);
 
-el.innerHTML = `
-  <div class="count-box">
-    <div class="valor">${d}</div>
-    <div class="label">dias</div>
-  </div>
-  <div class="count-box">
-    <div class="valor">${h}</div>
-    <div class="label">horas</div>
-  </div>
-  <div class="count-box">
-    <div class="valor">${m}</div>
-    <div class="label">minutos</div>
-  </div>
-  <div class="count-box">
-    <div class="valor">${s}</div>
-    <div class="label">segundos</div>
-  </div>
-`;
-
-
+    el.innerHTML = `
+      <div class="count-box">
+        <div class="valor">${d}</div>
+        <div class="label">dias</div>
+      </div>
+      <div class="count-box">
+        <div class="valor">${h}</div>
+        <div class="label">horas</div>
+      </div>
+      <div class="count-box">
+        <div class="valor">${m}</div>
+        <div class="label">minutos</div>
+      </div>
+      <div class="count-box">
+        <div class="valor">${s}</div>
+        <div class="label">segundos</div>
+      </div>
+    `;
   }
 
-  update();
-  const interval = setInterval(update, 1000);
+  const interval = setInterval(update, 1000); // agora definido antes de ser usado
+  update(); // chamada inicial após definição de interval
 }
+
 
 // Tela final com mensagem e playlist
 function telaFinal() {
