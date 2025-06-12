@@ -4,7 +4,7 @@ const app = document.getElementById('app');
 function tela1() {
   app.innerHTML = `
     <div class="fotos-flutuantes">
-      <img src="assets/images/mai1.jpg" class="flutuante" />
+      <img src="images/mai1.jpg" class="flutuante" />
       <img src="images/mai2.jpg" class="flutuante delay1" />
       <img src="images/mai3.jpg" class="flutuante delay2" />
       <img src="images/mai4.jpg" class="flutuante delay3" />
