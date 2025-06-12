@@ -1,0 +1,175 @@
+/* Geral */
+html {
+  overflow: hidden; /* impede overflow horizontal */
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow-y: auto; /* deixa rolar verticalmente */
+}
+
+/* Vídeo de fundo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Sobreposição escura */
+#app {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Restante do CSS continua igual... (copie o restante do seu style.css anterior aqui) */
+
+.frase-fofa {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #ffd700; /* douradinho suave */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+.fotos-flutuantes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Pra não atrapalhar os cliques nos botões */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.flutuante {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 90%;
+  object-fit: cover;
+  animation: flutuar 11s ease-in-out infinite;
+  opacity: 2.0;
+}
+
+/* Coloca cada uma em lugares aleatórios e com delay */
+.flutuante:nth-child(1) { top: 10%; left: 5%; }
+.flutuante:nth-child(2) { top: 40%; left: 85%; }
+.flutuante:nth-child(3) { top: 70%; left: 30%; }
+.flutuante:nth-child(4) { top: 20%; left: 60%; }
+
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3s; }
+
+@keyframes flutuar {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif; /* fonte base */
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.frase-fofa {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #ffe066;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px #000;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #ffccf9;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  animation: aparecer 2s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilização da contagem */
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.count-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.count-box .valor {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffe066;
+}
+
+.count-box .label {
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+/* --- Responsividade para celular --- */
+@media (max-width: 600px) {
+  #app {
+    padding: 1rem; /* menos espaçamento */
+  }
+
+  .frase-fofa {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .count-box {
+    min-width: 70px;
+    padding: 0.5rem 1rem;
+  }
+
+  .count-box .valor {
+    font-size: 2rem;
+  }
+
+  .flutuante {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Esconde fotos flutuantes no celular pra não atrapalhar */
+  .fotos-flutuantes {
+    display: none;
+  }
+}
