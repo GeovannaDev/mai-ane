@@ -1,8 +1,13 @@
 const app = document.getElementById('app');
 
 // Exemplo: tocar depois que a pessoa clicar em algo
-document.querySelector('button').addEventListener('click', () => {
-  document.getElementById('bg-audio').play();
+document.getElementById('play-audio').addEventListener('click', () => {
+  const audio = document.getElementById('bg-audio');
+  audio.play()
+    .then(() => console.log('Áudio tocando!'))
+    .catch(err => console.log('Erro ao tocar áudio:', err));
+});
+
 });
 
 // Tela inicial
